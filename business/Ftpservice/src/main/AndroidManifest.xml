@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nobug.ftpservice">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+
+<!--    <uses-permission android:name="android.permission.WAKE_LOCK" />-->
+<!--    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />-->
+<!--    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />-->
+
+<!--    <uses-feature-->
+<!--        android:name="android.software.leanback"-->
+<!--        android:required="false" />-->
+<!--    <uses-feature-->
+<!--        android:name="android.hardware.touchscreen"-->
+<!--        android:required="false" />-->
+
+    <application
+        android:name="com.nobug.ftpservice.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_ftp_service"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FTPDemo">
+        <activity
+            android:name=".FtpServiceActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.FTPDemo.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".gui.AboutActivity"
+            android:parentActivityName=".gui.MainActivity"
+            android:theme="@style/AppThemeDark" />
+
+        <activity
+            android:name=".gui.ManageUsersActivity"
+            android:parentActivityName=".gui.MainActivity"
+            android:theme="@style/AppThemeDark" />
+
+        <service android:name="com.nobug.ftpservice.FsService" />
+
+        <service android:name="com.nobug.ftpservice.NsdService" />
+
+        <receiver
+            android:name="com.nobug.ftpservice.gui.FsWidgetProvider"
+            android:exported="false"
+            android:icon="@mipmap/ic_ftp_service"
+            android:label="@string/swiftp_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="be.ppareit.swiftp.FTPSERVER_STARTED" />
+                <action android:name="be.ppareit.swiftp.FTPSERVER_STOPPED" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
+
+        <service android:name="com.nobug.ftpservice.gui.FsWidgetProvider$UpdateService" />
+
+        <!-- Tasker/Locale integration -->
+        <activity
+            android:name="com.nobug.ftpservice.locale.EditActivity"
+            android:exported="true"
+            android:icon="@drawable/widget_on"
+            android:label="@string/swiftp_name"
+            android:theme="@style/AppThemeDark"
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:windowSoftInputMode="adjustResize">
+            <!-- this Intent filter allows the plug-in to be discovered by the host. -->
+            <intent-filter>
+                <action android:name="com.twofortyfouram.locale.intent.action.EDIT_SETTING" />
+            </intent-filter>
+        </activity>
+
+<!--        <receiver-->
+<!--            android:name="com.nobug.ftpservice.locale.FireReceiver"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="com.twofortyfouram.locale.intent.action.FIRE_SETTING" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
+
+        <service
+            android:name=".gui.FsTileService"
+            android:icon="@mipmap/ic_qs_ftp_server"
+            android:label="@string/swiftp_name"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+
+        </service>
+
+    </application>
+
+</manifest>

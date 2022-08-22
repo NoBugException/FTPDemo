@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/business" />
             <option value="$PROJECT_DIR$/business/Ftpclient" />
+            <option value="$PROJECT_DIR$/business/Ftpservice" />
             <option value="$PROJECT_DIR$/function" />
             <option value="$PROJECT_DIR$/function/common" />
           </set>
