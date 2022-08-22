@@ -1,0 +1,48 @@
+//根据isLibrary变量动态的切换 集成/组件模式
+if (isLibrary){
+    apply plugin: 'com.android.library'
+}else{
+    apply plugin: 'com.android.application'
+}
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'org.jetbrains.kotlin.android'
+
+android {
+    compileSdk rootProject.android.compileSdkVersion
+
+    defaultConfig {
+        applicationId rootProject.appId["ftpclient"]
+        minSdk rootProject.android.minSdkVersion
+        targetSdk rootProject.android.targetSdkVersion
+        versionCode rootProject.android.versionCode
+        versionName rootProject.android.versionName
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    //资源配置
+    sourceSets{
+        main{
+            if(isLibrary){
+                // 在集成模式下，使用的manifest文件
+                manifest.srcFile 'src/main/library/AndroidManifest.xml'
+            }else{
+                // 在组件模式下，使用的manifest文件
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                // 在组件模式下，使用的多个java路径
+                java.srcDirs 'src/main/library/java','src/main/java'
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api project(path: ':function:common')
+}

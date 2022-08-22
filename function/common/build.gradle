@@ -1,0 +1,35 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdk rootProject.android.compileSdkVersion
+    defaultConfig {
+        minSdk rootProject.android.minSdkVersion
+        targetSdk rootProject.android.targetSdkVersion
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api rootProject.dependencie["appcompat"]
+    api rootProject.dependencie["material"]
+    api rootProject.dependencie["junit"]
+    androidTestImplementation rootProject.dependencie["extjunit"]
+    androidTestImplementation rootProject.dependencie["espresso"]
+    api rootProject.dependencie["constraintlayout"]
+    api rootProject.dependencie["eventbus"]
+    api rootProject.dependencie["ktx"]
+    api rootProject.dependencie["recyclerview"]
+    api rootProject.dependencie["glide"]
+    api rootProject.dependencie["permissionx"]
+    api rootProject.dependencie["multidex"]
+    api rootProject.dependencie["coroutinesCore"]
+    api rootProject.dependencie["coroutinesAndroid"]
+    api rootProject.dependencie["databinding-runtime"]
+}

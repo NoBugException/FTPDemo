@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/94317/AndroidStudioProjects/FTPDemo/app/src/main/res/layout/activity_main.xml" value="0.12132725430597771" />
+        <entry key="..\:/Users/94317/AndroidStudioProjects/FTPDemo/app/src/main/res/layout/content_main.xml" value="0.23385416666666667" />
+        <entry key="..\:/Users/94317/AndroidStudioProjects/FTPDemo/business/FtpClient/src/main/res/layout/activity_ftp_client.xml" value="0.18020833333333333" />
+        <entry key="..\:/Users/94317/AndroidStudioProjects/FTPDemo/business/FtpClient/src/main/res/layout/activity_welcome.xml" value="0.18020833333333333" />
+        <entry key="..\:/Users/94317/AndroidStudioProjects/FTPDemo/business/Ftpclient/src/main/res/layout/activity_ftp_client.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/94317/AndroidStudioProjects/FTPDemo/business/Ftpclient/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/94317/AndroidStudioProjects/FTPDemo/business/Ftpclient/src/main/res/menu/menu_main.xml" value="0.18489583333333334" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

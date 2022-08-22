@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.luxshare.common">
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!--Android 10 (API 29) 默认执行分区存储机制，添加 android:requestLegacyExternalStorage="true" 可以解决-->
+    <!--Android 11 (API 30) 添加 android.permission.MANAGE_EXTERNAL_STORAGE 权限可以解决-->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+
+    <uses-feature android:name="android.hardware.usb.host" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+</manifest>

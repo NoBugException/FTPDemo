@@ -1,0 +1,5 @@
+rootProject.name = "FTPDemo"
+include ':app'
+include ':function:common'
+include ':Ftpclient'
+include ':business:Ftpclient'
